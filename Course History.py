@@ -12,12 +12,3 @@ class CourseHistory(AbstractTable):
         CH_START_YEAR = "start_year"
         CH_PROFESSOR_ID = "professor_id"
         CH_END_YEAR = "end_year"
-
-
-def main():
-    print(CourseHistory.get_all(CourseHistory.Cols.CH_COURSE, CourseHistory.Cols.CH_START_YEAR))
-
-
-main()
-
-

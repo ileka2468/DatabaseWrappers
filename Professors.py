@@ -18,8 +18,3 @@ class Professors(AbstractTable):
         RMP_RATING_DISTRO = "rmp_rating_distro"
 
 
-def main():
-    print(Professors.get_multiple_records( {Professors.Cols.PROFESSOR_POSITION: "Professor"}, Professors.Cols.PROFESSOR_NAME, Professors.Cols.PROFESSOR_ID))
-
-
-main()
