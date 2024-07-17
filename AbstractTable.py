@@ -4,6 +4,7 @@ from supabase_client import SupaBaseClient
 
 class AbstractTable:
     _table_name = ""  # Default value, should be overridden by subclasses
+    _joinable_tables = []  # Default values for tables that this table can be joined with
 
     class Cols:
         ALL = "*"
@@ -26,6 +27,10 @@ class AbstractTable:
         return eval(code)[0]
 
     @classmethod
+    def get_record_with_join(cls, where_map: dict, *selected_columns) -> dict:
+        pass
+
+    @classmethod
     def get_multiple_records(cls, where_map: dict, *selected_columns) -> list:
         cls._validate_columns(selected_columns)
         assert isinstance(where_map, dict) and len(where_map) > 0, \
@@ -33,6 +38,10 @@ class AbstractTable:
         quoted_columns = [f'"{column}"' for column in selected_columns]
         code = f"cls._db.from_('{cls._table_name}').select({','.join(quoted_columns)}){cls._generate_equalities(where_map)}"
         return eval(code)
+
+    @classmethod
+    def get_records_with_join(cls, where_map: dict, *selected_columns) -> list:
+        pass
 
     @classmethod
     def insert(cls, insert_map: dict):

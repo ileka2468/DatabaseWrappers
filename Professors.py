@@ -3,6 +3,7 @@ from AbstractTable import AbstractTable
 
 class Professors(AbstractTable):
     _table_name = "Professors"
+    _joinable_tables = []
 
     class Cols(AbstractTable.Cols):
         PROFESSOR_ID = "professor_id"
@@ -19,7 +20,9 @@ class Professors(AbstractTable):
 
 
 def main():
-    print(Professors.get_multiple_records( {Professors.Cols.PROFESSOR_POSITION: "Professor"}, Professors.Cols.PROFESSOR_NAME, Professors.Cols.PROFESSOR_ID))
+    data = Professors.get_single_record({Professors.Cols.PROFESSOR_NAME: "James Riely"},
+                                        Professors.Cols.FACULTY_ID, Professors.Cols.PROFESSOR_NAME)
+    print(data)
 
 
 main()
