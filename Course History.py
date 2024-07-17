@@ -5,17 +5,10 @@ class CourseHistory(AbstractTable):
     _table_name = "Course History"
 
     class Cols(AbstractTable.Cols):
-        PROFESSOR_ID = "ch_id"
-        PROFESSOR_NAME = "course"
-        PROFESSOR_EMAIL = "section"
-        PROFESSOR_POSITION = "term"
-        PROFESSOR_SCHOOL = "term"
-        RMP_PROFESSOR_DEPARTMENT = "term"
-        RMP_PROFILE_NAME = "end_year"
-        RMP_PROFILE_ID = "rmp_profile_id"
-        PROFILE_PICTURE = "profile_piture"
-        FACULTY_ID = "faculty_id"
-        RMP_RATING_DISTRO = "rmp_rating_distro"
-
-
-
+        CH_ID = "ch_id"
+        CH_COURSE = "course"
+        CH_SECTION = "section"
+        CH_TERM = "term"
+        CH_START_YEAR = "start_year"
+        CH_PROFESSOR_ID = "professor_id"
+        CH_END_YEAR = "end_year"
