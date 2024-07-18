@@ -11,5 +11,3 @@ class Courses(AbstractTable):
         DESCRIPTION = "description"
         PREREQS = "prereqs"
         EMBEDDING = "embedding"
-
-
