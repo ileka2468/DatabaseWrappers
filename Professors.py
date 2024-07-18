@@ -16,5 +16,3 @@ class Professors(AbstractTable):
         PROFILE_PICTURE = "profile_piture"
         FACULTY_ID = "faculty_id"
         RMP_RATING_DISTRO = "rmp_rating_distro"
-
-

@@ -1,8 +1,10 @@
 from AbstractTable import AbstractTable
+from CourseHistory import CourseHistory
 
 
 class Evaluations(AbstractTable):
     _table_name = "Evaluations"
+    _joinable_tables = [CourseHistory]
 
     class Cols(AbstractTable.Cols):
         EVAL_ID = "eval_id"
@@ -22,5 +24,3 @@ class Evaluations(AbstractTable):
         SCORE = "score"
         ADJUSTED_SCORE = "adjusted_score"
         CH_ID = "ch_id"
-
-

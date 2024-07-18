@@ -1,8 +1,12 @@
 from AbstractTable import AbstractTable
+from Courses import Courses
+from Terms import Terms
+from Professors import Professors
 
 
 class CourseHistory(AbstractTable):
     _table_name = "Course History"
+    _joinable_tables = [Courses, Terms, Professors]
 
     class Cols(AbstractTable.Cols):
         CH_ID = "ch_id"

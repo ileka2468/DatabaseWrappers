@@ -7,5 +7,3 @@ class Terms(AbstractTable):
     class Cols(AbstractTable.Cols):
         TERM_ID = "term_id"
         TERM = "term"
-        
-
